@@ -2,7 +2,7 @@
 
 //import { GoogleTranslate } from './lib';
 import { GoogleTranslate } from '@zyther/ggl-translate'
-import "@zyther/ggl-translate/dist/styles.css"
+import "@zyther/ggl-translate/styles"
 export default function Home() {
   return (
     <main className="min-h-screen p-8">
@@ -14,7 +14,7 @@ export default function Home() {
         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
           <GoogleTranslate
             defaultLanguage="en"
-            supportedLanguages="pt,en,es,fr,it,ru,de,ja"
+            supportedLanguages="pt,es,fr,en,it,ru,de,ja"
             theme={{ mode: 'system' }}
             enableAutoDetection={true}
             showNativeNames={true}

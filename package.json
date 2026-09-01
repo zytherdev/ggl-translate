@@ -1,16 +1,11 @@
 {
   "name": "@zyther/ggl-translate",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A lightweight React Google Translate language selector with no runtime dependencies.",
-  "type": "module",
+
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -22,6 +17,13 @@
       "require": "./dist/styles.css"
     }
   },
+  
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+
   "scripts": {
     "dev": "next dev",
     "build:lib": "tsup",
@@ -31,10 +33,12 @@
     "lint": "next lint",
     "prepublishOnly": "npm run build:all"
   },
+
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
   },
+
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -47,6 +51,7 @@
     "tsup": "^8",
     "typescript": "^5"
   },
+
   "keywords": [
     "react",
     "reactjs",
@@ -67,14 +72,18 @@
     "react-library",
     "typescript"
   ],
+
   "author": "zytherdev <zyther.dev@outlook.com>",
   "homepage": "https://github.com/zytherdev/ggl-translate#readme",
+
   "bugs": {
     "url": "https://github.com/zytherdev/ggl-translate/issues"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zytherdev/ggl-translate.git"
   },
+
   "license": "MIT"
 }
