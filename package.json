@@ -1,0 +1,49 @@
+{
+  "name": "ggl-translate",
+  "description": "A lightweight React Google Translate language selector with no runtime dependencies.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles": {
+      "import": "./dist/styles.css",
+      "require": "./dist/styles.css"
+    }
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build:lib": "tsup",
+    "build:lib:css": "cp app/lib/styles.css dist/styles.css",
+    "build:all": "npm run build:lib && npm run build:lib:css",
+    "start": "next start",
+    "lint": "next lint",
+    "prepublishOnly": "npm run build:all"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "next": "16.3.4",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.4",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "tsup": "^8"
+  }
+}
