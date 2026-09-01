@@ -46,7 +46,7 @@ declare global {
 }
 declare const GoogleTranslate: React$1.FC<LanguageSelectorProps>;
 
-declare const _getLanguageFlag: (code: string) => string;
+declare const getLanguageFlag: (code: string) => string;
 declare const getLanguageName: (code: string) => string;
 declare const getNativeLanguageName: (code: string) => string;
 declare const detectUserLanguage: () => string;
@@ -58,4 +58,4 @@ declare const LANGUAGES: Record<string, {
 
 declare const LANGUAGE_FLAGS: Record<string, string>;
 
-export { GoogleTranslate, type GoogleTranslateConfig, LANGUAGES, LANGUAGE_FLAGS, type LanguageSelectorProps, type ThemeConfig, _getLanguageFlag, GoogleTranslate as default, detectUserLanguage, getLanguageName, getNativeLanguageName };
+export { GoogleTranslate, type GoogleTranslateConfig, LANGUAGES, LANGUAGE_FLAGS, type LanguageSelectorProps, type ThemeConfig, GoogleTranslate as default, detectUserLanguage, getLanguageFlag, getLanguageName, getNativeLanguageName };

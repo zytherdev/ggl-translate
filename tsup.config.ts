@@ -9,7 +9,6 @@ export default defineConfig({
   clean: true,
   minify: true,
   external: ['react', 'react-dom'],
-  loader: { '.css': 'copy' },
   treeshake: true,
   platform: 'browser',
   esbuildOptions(options) {

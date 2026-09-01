@@ -12,7 +12,7 @@ import {
   getLanguageName,
   getNativeLanguageName,
   detectUserLanguage,
-  _getLanguageFlag,
+  getLanguageFlag,
 } from './utils';
 
 import './styles.css';
@@ -562,15 +562,6 @@ export const GoogleTranslate: React.FC<
     }
 
     return name;
-  };
-
-  /**
-   * flags
-   */
-  const getLanguageFlag = (
-    code: string
-  ) => {
-    return _getLanguageFlag(code)
   };
 
   return (

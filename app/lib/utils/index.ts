@@ -1,7 +1,7 @@
 import { LANGUAGE_FLAGS } from './flags';
 import { LANGUAGES } from './langs';
 
-export const _getLanguageFlag = (
+export const getLanguageFlag = (
     code: string
   ) => {
     return LANGUAGE_FLAGS[code] ?? '';

@@ -1,7 +1,8 @@
 'use client';
 
-import { GoogleTranslate } from './lib';
-
+//import { GoogleTranslate } from './lib';
+import { GoogleTranslate } from '@zyther/ggl-translate'
+import "@zyther/ggl-translate/dist/styles.css"
 export default function Home() {
   return (
     <main className="min-h-screen p-8">
