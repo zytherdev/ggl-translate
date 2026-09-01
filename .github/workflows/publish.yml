@@ -2,7 +2,7 @@ name: Publish to npm
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
     paths:
       - 'package.json' # pub só se package.json mudar
   release:
