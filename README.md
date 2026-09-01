@@ -1,5 +1,10 @@
 # @zyther/ggl-translate
 
+[![npm version](https://img.shields.io/npm/v/%40zyther/ggl-translate.svg)](https://www.npmjs.com/package/@zyther/ggl-translate)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://react.dev/)
+
 A lightweight and modern Google Translate language selector for React.
 
 Built with **TypeScript**, designed to be simple to integrate, and with **zero runtime dependencies**. React and React DOM are provided as peer dependencies.
