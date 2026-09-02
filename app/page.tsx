@@ -5,7 +5,7 @@ import { GoogleTranslate } from '@zyther/ggl-translate'
 import "@zyther/ggl-translate/styles"
 export default function Home() {
   return (
-    <main className="min-h-screen p-8">
+    <main className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
       <div className="max-w-2xl mx-auto">
         <h1 translate="no" className="text-3xl font-bold mb-8">
           🌐 Google Translate - Next.js

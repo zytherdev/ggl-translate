@@ -337,6 +337,18 @@ export const GoogleTranslate: React.FC<
           log(
             'Google Translate initialized'
           );
+          
+          const i = setInterval(() => {
+            console.log('[GoogleTranslate] Checking body top style...');
+            if(document.body.style.top !== '0px') {
+              document.body.style.top = '0px';
+              console.log('[GoogleTranslate] Reset body top to 0px');
+            }
+          }, 100)
+
+          setTimeout(() => {
+            clearInterval(i);
+          }, 5000)
         } catch (error) {
           console.error(
             '[GoogleTranslate] Initialization error:',
