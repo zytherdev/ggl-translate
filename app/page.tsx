@@ -1,8 +1,8 @@
 'use client';
 
-//import { GoogleTranslate } from './lib';
-import { GoogleTranslate } from '@zyther/ggl-translate'
-import "@zyther/ggl-translate/styles"
+import { GoogleTranslate } from './lib';
+//import { GoogleTranslate } from '@zyther/ggl-translate'
+//import "@zyther/ggl-translate/styles"
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
@@ -17,6 +17,7 @@ export default function Home() {
             supportedLanguages="pt,es,fr,en,it,ru,de,ja"
             theme={{ mode: 'system' }}
             enableAutoDetection={true}
+            showStatus={false}
             showNativeNames={true}
             debug={true}
             onLanguageChange={(lang) => {

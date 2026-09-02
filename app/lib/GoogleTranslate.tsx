@@ -51,6 +51,7 @@ export const GoogleTranslate: React.FC<
   onLanguageChange,
   enableAutoDetection = true,
   showNativeNames = true,
+  showStatus = true,
   placeholder = 'Select Language',
   debug = false,
 }) => {
@@ -193,7 +194,7 @@ export const GoogleTranslate: React.FC<
     document.cookie =
       `${GOOGLE_COOKIE}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
 
-    const hostname =
+    /*const hostname =
       window.location.hostname;
 
     if (
@@ -203,7 +204,7 @@ export const GoogleTranslate: React.FC<
     ) {
       document.cookie =
         `${GOOGLE_COOKIE}=; path=/; domain=${hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-    }
+    }*/
 
     log('Google translation cookie cleared');
   }, [log]);
@@ -632,7 +633,7 @@ export const GoogleTranslate: React.FC<
         aria-hidden="true"
       />
 
-      {isInitialized &&
+      {showStatus && isInitialized &&
         currentLanguage && (
           <div className="google-translate-status">
             <span className="status-indicator">

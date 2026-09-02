@@ -1,6 +1,6 @@
 {
   "name": "@zyther/ggl-translate",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A lightweight React Google Translate language selector with no runtime dependencies.",
 
   "main": "dist/index.js",

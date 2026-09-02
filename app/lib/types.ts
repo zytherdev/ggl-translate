@@ -24,6 +24,7 @@ export interface LanguageSelectorProps {
   onLanguageChange?: (language: string) => void;
   enableAutoDetection?: boolean;
   showNativeNames?: boolean;
+  showStatus?: boolean;
   placeholder?: string;
   debug?: boolean;
 }
