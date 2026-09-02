@@ -156,7 +156,7 @@ export const GoogleTranslate: React.FC<
        * try to set it no domain atual
        * explicitamente
        */
-      const hostname =
+      /*const hostname =
         window.location.hostname;
 
       if (
@@ -166,7 +166,7 @@ export const GoogleTranslate: React.FC<
       ) {
         document.cookie =
           `${GOOGLE_COOKIE}=${encodeURIComponent(value)}; path=/; domain=${hostname}; max-age=31536000; SameSite=Lax`;
-      }
+      }*/
 
       log(
         'Google language cookie set:',
@@ -194,7 +194,7 @@ export const GoogleTranslate: React.FC<
     document.cookie =
       `${GOOGLE_COOKIE}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
 
-    /*const hostname =
+    const hostname =
       window.location.hostname;
 
     if (
@@ -204,7 +204,7 @@ export const GoogleTranslate: React.FC<
     ) {
       document.cookie =
         `${GOOGLE_COOKIE}=; path=/; domain=${hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-    }*/
+    }
 
     log('Google translation cookie cleared');
   }, [log]);
