@@ -150,13 +150,13 @@ export const GoogleTranslate: React.FC<
        * cookie p/ o domain atual
        */
       document.cookie =
-        `${GOOGLE_COOKIE}=${encodeURIComponent(value)}; path=/; max-age=31536000; SameSite=Lax`;
+        `${GOOGLE_COOKIE}=${encodeURIComponent(value)}; path=/; max-age=31536000`;
 
       /**
        * try to set it no domain atual
        * explicitamente
        */
-      /*const hostname =
+      const hostname =
         window.location.hostname;
 
       if (
@@ -165,8 +165,8 @@ export const GoogleTranslate: React.FC<
         !hostname.includes('127.0.0.1')
       ) {
         document.cookie =
-          `${GOOGLE_COOKIE}=${encodeURIComponent(value)}; path=/; domain=${hostname}; max-age=31536000; SameSite=Lax`;
-      }*/
+          `${GOOGLE_COOKIE}=${encodeURIComponent(value)}; path=/; domain=${hostname}; max-age=31536000`;
+      }
 
       log(
         'Google language cookie set:',
