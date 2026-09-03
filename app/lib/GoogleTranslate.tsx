@@ -146,8 +146,19 @@ export const GoogleTranslate: React.FC<
       const value =
         `/${defaultLanguage}/${language}`;
 
-      document.cookie =
+      const hostname = window.location.hostname;
+
+      const isLocalhost =
+        hostname === 'localhost' ||
+        hostname === '127.0.0.1';
+
+      if (isLocalhost) {
+        document.cookie =
+          `${GOOGLE_COOKIE}=${value}; Path=/; Max-Age=31536000`;
+      } else {
+        document.cookie =
         `${GOOGLE_COOKIE}=${value}; Domain=.zyther.dev; Path=/; Max-Age=31536000; SameSite=Lax`;
+      }
 
       log(
         '[GoogleTranslate] domain cookie:',
