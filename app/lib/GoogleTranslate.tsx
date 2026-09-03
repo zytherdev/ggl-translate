@@ -532,34 +532,7 @@ export const GoogleTranslate: React.FC<
     initializeGoogleTranslate,
     log,
   ]);
-
-  /*useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    const killHostOnly = () => {
-      document.cookie =
-        `${GOOGLE_COOKIE}=; Path=/; Max-Age=0`;
-    };
-
-    killHostOnly();
-
-    const interval = window.setInterval(
-      killHostOnly,
-      100
-    );
-
-    const timeout = window.setTimeout(() => {
-      window.clearInterval(interval);
-    }, 15000);
-
-    return () => {
-      window.clearInterval(interval);
-      window.clearTimeout(timeout);
-    };
-  }, []);*/
-
+  
   /**
    * langs names
    */
