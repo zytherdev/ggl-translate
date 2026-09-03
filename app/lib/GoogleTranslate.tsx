@@ -143,24 +143,14 @@ export const GoogleTranslate: React.FC<
         return;
       }
 
-      const value = `/${defaultLanguage}/${language}`;
+      const value =
+        `/${defaultLanguage}/${language}`;
 
-      const hostname = window.location.hostname;
-
-      const isLocalhost =
-        hostname === 'localhost' ||
-        hostname === '127.0.0.1';
-
-      if (isLocalhost) {
-        document.cookie =
-          `${GOOGLE_COOKIE}=${value}; Path=/; Max-Age=31536000; SameSite=Lax`;
-      } else {
-        document.cookie =
-          `${GOOGLE_COOKIE}=${value}; Domain=.zyther.dev; Path=/; Max-Age=31536000; SameSite=Lax`;
-      }
+      document.cookie =
+        `${GOOGLE_COOKIE}=${value}; Domain=.zyther.dev; Path=/; Max-Age=31536000; SameSite=Lax`;
 
       log(
-        '[GoogleTranslate] Cookie set:',
+        '[GoogleTranslate] domain cookie:',
         value
       );
     },
@@ -550,6 +540,33 @@ export const GoogleTranslate: React.FC<
     initializeGoogleTranslate,
     log,
   ]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const killHostOnly = () => {
+      document.cookie =
+        `${GOOGLE_COOKIE}=; Path=/; Max-Age=0`;
+    };
+
+    killHostOnly();
+
+    const interval = window.setInterval(
+      killHostOnly,
+      100
+    );
+
+    const timeout = window.setTimeout(() => {
+      window.clearInterval(interval);
+    }, 15000);
+
+    return () => {
+      window.clearInterval(interval);
+      window.clearTimeout(timeout);
+    };
+  }, []);
 
   /**
    * langs names
