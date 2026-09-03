@@ -143,33 +143,24 @@ export const GoogleTranslate: React.FC<
         return;
       }
 
-      const value =
-        `/${defaultLanguage}/${language}`;
+      const value = `/${defaultLanguage}/${language}`;
 
-      /**
-       * cookie p/ o domain atual
-       */
-      document.cookie =
-        `${GOOGLE_COOKIE}=${value}; path=/; max-age=31536000`;
+      const hostname = window.location.hostname;
 
-      /**
-       * try to set it no domain atual
-       * explicitamente
-       */
-      /*const hostname =
-        window.location.hostname;
+      const isLocalhost =
+        hostname === 'localhost' ||
+        hostname === '127.0.0.1';
 
-      if (
-        hostname &&
-        hostname !== 'localhost' &&
-        !hostname.includes('127.0.0.1')
-      ) {
+      if (isLocalhost) {
         document.cookie =
-          `${GOOGLE_COOKIE}=${encodeURIComponent(value)}; path=/; domain=${hostname}; max-age=31536000`;
-      }*/
+          `${GOOGLE_COOKIE}=${value}; Path=/; Max-Age=31536000; SameSite=Lax`;
+      } else {
+        document.cookie =
+          `${GOOGLE_COOKIE}=${value}; Domain=.zyther.dev; Path=/; Max-Age=31536000; SameSite=Lax`;
+      }
 
       log(
-        'Google language cookie set:',
+        '[GoogleTranslate] Cookie set:',
         value
       );
     },
@@ -193,22 +184,24 @@ export const GoogleTranslate: React.FC<
 
     const hostname = window.location.hostname;
 
-    // host-only cookie
-    document.cookie =
-      `${GOOGLE_COOKIE}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+    const isLocalhost =
+      hostname === 'localhost' ||
+      hostname === '127.0.0.1';
 
-    // domain cookie legado
-    if (
-      hostname &&
-      hostname !== 'localhost' &&
-      !hostname.includes('127.0.0.1')
-    ) {
+    // rm host-only cookie
+    document.cookie =
+      `${GOOGLE_COOKIE}=; Path=/; Max-Age=0`;
+
+    // rm domain cookie usado pelo Google
+    if (!isLocalhost) {
       document.cookie =
-        `${GOOGLE_COOKIE}=; path=/; domain=${hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+        `${GOOGLE_COOKIE}=; Domain=.zyther.dev; Path=/; Max-Age=0`;
     }
 
-    log('Google translation cookies cleared');
-  }, [log]);;
+    log(
+      '[GoogleTranslate] Cookies cleared'
+    );
+  }, [log]);
 
   /**
    * detect o idioma inicial
