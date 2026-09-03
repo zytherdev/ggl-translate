@@ -446,17 +446,10 @@ export const GoogleTranslate: React.FC<
       );
 
       /**
-       * lang original:
        * rm tradução
        */
-      if (
-        language ===
-        defaultLanguage.toLowerCase()
-      ) {
-        clearGoogleLanguage();
-      } else {
-        setGoogleLanguage(language);
-      }
+      clearGoogleLanguage()
+      setGoogleLanguage(language);
 
       setCurrentLanguage(language);
 
@@ -472,7 +465,6 @@ export const GoogleTranslate: React.FC<
     },
     [
       languages,
-      defaultLanguage,
       clearGoogleLanguage,
       setGoogleLanguage,
       onLanguageChange,
@@ -541,7 +533,7 @@ export const GoogleTranslate: React.FC<
     log,
   ]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (typeof window === 'undefined') {
       return;
     }
@@ -566,7 +558,7 @@ export const GoogleTranslate: React.FC<
       window.clearInterval(interval);
       window.clearTimeout(timeout);
     };
-  }, []);
+  }, []);*/
 
   /**
    * langs names
