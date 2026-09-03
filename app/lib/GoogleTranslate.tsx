@@ -150,13 +150,13 @@ export const GoogleTranslate: React.FC<
        * cookie p/ o domain atual
        */
       document.cookie =
-        `${GOOGLE_COOKIE}=${encodeURIComponent(value)}; path=/; max-age=31536000`;
+        `${GOOGLE_COOKIE}=${value}; path=/; max-age=31536000`;
 
       /**
        * try to set it no domain atual
        * explicitamente
        */
-      const hostname =
+      /*const hostname =
         window.location.hostname;
 
       if (
@@ -166,7 +166,7 @@ export const GoogleTranslate: React.FC<
       ) {
         document.cookie =
           `${GOOGLE_COOKIE}=${encodeURIComponent(value)}; path=/; domain=${hostname}; max-age=31536000`;
-      }
+      }*/
 
       log(
         'Google language cookie set:',
@@ -191,12 +191,13 @@ export const GoogleTranslate: React.FC<
       return;
     }
 
+    const hostname = window.location.hostname;
+
+    // host-only cookie
     document.cookie =
       `${GOOGLE_COOKIE}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
 
-    const hostname =
-      window.location.hostname;
-
+    // domain cookie legado
     if (
       hostname &&
       hostname !== 'localhost' &&
@@ -206,8 +207,8 @@ export const GoogleTranslate: React.FC<
         `${GOOGLE_COOKIE}=; path=/; domain=${hostname}; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
     }
 
-    log('Google translation cookie cleared');
-  }, [log]);
+    log('Google translation cookies cleared');
+  }, [log]);;
 
   /**
    * detect o idioma inicial
