@@ -560,7 +560,7 @@
 /* ggl body offset */
 
 body {
-  top: 0 !important;
+  top: 0px !important;
 
   position: static !important;
 }

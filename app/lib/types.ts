@@ -16,6 +16,7 @@ export interface ThemeConfig {
 }
 
 export interface LanguageSelectorProps {
+  domain: string;
   defaultLanguage?: string;
   supportedLanguages?: string;
   theme?: ThemeConfig;

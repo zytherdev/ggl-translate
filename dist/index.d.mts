@@ -16,6 +16,7 @@ interface ThemeConfig {
     };
 }
 interface LanguageSelectorProps {
+    domain: string;
     defaultLanguage?: string;
     supportedLanguages?: string;
     theme?: ThemeConfig;
@@ -24,6 +25,7 @@ interface LanguageSelectorProps {
     onLanguageChange?: (language: string) => void;
     enableAutoDetection?: boolean;
     showNativeNames?: boolean;
+    showStatus?: boolean;
     placeholder?: string;
     debug?: boolean;
 }

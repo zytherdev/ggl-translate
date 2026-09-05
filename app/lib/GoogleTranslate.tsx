@@ -43,6 +43,7 @@ declare global {
 export const GoogleTranslate: React.FC<
   LanguageSelectorProps
 > = ({
+  domain,
   defaultLanguage = 'en',
   supportedLanguages = 'pt,en,es,fr,it,ru',
   theme = { mode: 'system' },
@@ -157,7 +158,7 @@ export const GoogleTranslate: React.FC<
           `${GOOGLE_COOKIE}=${value}; Path=/; Max-Age=31536000`;
       } else {
         document.cookie =
-        `${GOOGLE_COOKIE}=${value}; Path=/; Max-Age=31536000; SameSite=Lax`;
+        `${GOOGLE_COOKIE}=${value}; Domain:${domain}; Path=/; Max-Age=31536000; SameSite=Lax`;
       }
 
       log(
@@ -183,21 +184,21 @@ export const GoogleTranslate: React.FC<
       return;
     }
 
-    //const hostname = window.location.hostname;
+    const hostname = window.location.hostname;
 
-    /*const isLocalhost =
+    const isLocalhost =
       hostname === 'localhost' ||
-      hostname === '127.0.0.1';*/
+      hostname === '127.0.0.1';
 
     // rm host-only cookie
     document.cookie =
       `${GOOGLE_COOKIE}=; Path=/; Max-Age=0`;
 
     // rm domain cookie usado pelo Google
-    /*if (!isLocalhost) {
+    if (!isLocalhost) {
       document.cookie =
-        `${GOOGLE_COOKIE}=; Domain:.zyther.dev; Path=/; Max-Age=0`;
-    }*/
+        `${GOOGLE_COOKIE}=; Domain:${domain}; Path=/; Max-Age=0`;
+    }
 
     log(
       '[GoogleTranslate] Cookies cleared'
