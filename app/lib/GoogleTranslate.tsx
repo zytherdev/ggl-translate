@@ -185,9 +185,9 @@ export const GoogleTranslate: React.FC<
 
     const hostname = window.location.hostname;
 
-    const isLocalhost =
+    /*const isLocalhost =
       hostname === 'localhost' ||
-      hostname === '127.0.0.1';
+      hostname === '127.0.0.1';*/
 
     // rm host-only cookie
     document.cookie =
