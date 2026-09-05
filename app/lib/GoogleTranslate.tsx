@@ -157,7 +157,7 @@ export const GoogleTranslate: React.FC<
           `${GOOGLE_COOKIE}=${value}; Path=/; Max-Age=31536000`;
       } else {
         document.cookie =
-        `${GOOGLE_COOKIE}=${value}; Domain=.zyther.dev; Path=/; Max-Age=31536000; SameSite=Lax`;
+        `${GOOGLE_COOKIE}=${value}; Path=/; Max-Age=31536000; SameSite=Lax`;
       }
 
       log(
@@ -194,10 +194,10 @@ export const GoogleTranslate: React.FC<
       `${GOOGLE_COOKIE}=; Path=/; Max-Age=0`;
 
     // rm domain cookie usado pelo Google
-    if (!isLocalhost) {
+    /*if (!isLocalhost) {
       document.cookie =
-        `${GOOGLE_COOKIE}=; Domain=.zyther.dev; Path=/; Max-Age=0`;
-    }
+        `${GOOGLE_COOKIE}=; Path=/; Max-Age=0`;
+    }*/
 
     log(
       '[GoogleTranslate] Cookies cleared'
