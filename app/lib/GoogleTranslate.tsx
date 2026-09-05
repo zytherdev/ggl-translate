@@ -183,7 +183,7 @@ export const GoogleTranslate: React.FC<
       return;
     }
 
-    const hostname = window.location.hostname;
+    //const hostname = window.location.hostname;
 
     /*const isLocalhost =
       hostname === 'localhost' ||
@@ -196,7 +196,7 @@ export const GoogleTranslate: React.FC<
     // rm domain cookie usado pelo Google
     /*if (!isLocalhost) {
       document.cookie =
-        `${GOOGLE_COOKIE}=; Path=/; Max-Age=0`;
+        `${GOOGLE_COOKIE}=; Domain:.zyther.dev; Path=/; Max-Age=0`;
     }*/
 
     log(
